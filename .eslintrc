@@ -48,6 +48,8 @@
         "rest-spread-spacing": "off",
         "max-len": "off",
         "Require-jsdoc": "off",
+        "eol-last": "error",
+
         "jsx-quotes": "error",
         "react/display-name": ["error", {"ignoreTranspilerName": false }],
         "react/forbid-prop-types": ["error", {"forbid": ["any"]}],
