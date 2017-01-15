@@ -3,7 +3,7 @@ export default (state = [], action) => {
     case 'CREATE_COURSE':
         return [
             ...state,
-            Object.assign({}, state, action.course),
+            Object.assign({}, action.course),
         ];
 
     default:
