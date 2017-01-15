@@ -1,6 +1,10 @@
 {
-    "extends": "google",
-
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
     "plugins": [
         "react"
     ],
@@ -30,6 +34,7 @@
         "valid-typeof": "warn",
         "no-const-assign": "error",
         "new-parens": "error",
+        "no-multi-spaces": "error",
         "prefer-arrow-callback": "error",
         "arrow-spacing": "error",
         "no-mixed-spaces-and-tabs": "error",
@@ -40,6 +45,40 @@
         "newline-per-chained-call": "error",
         "comma-dangle": "warn",
         "func-call-spacing": "off",
-        "rest-spread-spacing": "off"
+        "rest-spread-spacing": "off",
+        "max-len": "off",
+        "Require-jsdoc": "off",
+        "jsx-quotes": "error",
+        "react/display-name": ["error", {"ignoreTranspilerName": false }],
+        "react/forbid-prop-types": ["error", {"forbid": ["any"]}],
+        "react/jsx-boolean-value": "error",
+        "react/jsx-closing-bracket-location": "off",
+        "react/jsx-curly-spacing": "error",
+        "react/jsx-indent-props": "off",
+        "react/jsx-key": "error",
+        "react/jsx-max-props-per-line": "off",
+        "react/jsx-no-bind": "error",
+        "react/jsx-no-duplicate-props": "error",
+        "react/jsx-no-literals": "off",
+        "react/jsx-no-undef": "error",
+        "react/jsx-pascal-case": "error",
+        "react/jsx-sort-prop-types": "off",
+        "react/jsx-sort-props": "off",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/no-danger": "error",
+        "react/no-did-mount-set-state": "error",
+        "react/no-did-update-set-state": "error",
+        "react/no-direct-mutation-state": "error",
+        "react/no-multi-comp": "error",
+        "react/no-set-state": "off",
+        "react/no-unknown-property": "error",
+        "react/prefer-es6-class": "error",
+        "react/prop-types": "error",
+        "react/react-in-jsx-scope": "error",
+        "react/require-extension": "error",
+        "react/self-closing-comp": "error",
+        "react/sort-comp": "error",
+        "react/wrap-multilines": "error"
     }
 }
