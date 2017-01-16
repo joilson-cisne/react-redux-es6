@@ -21,7 +21,7 @@ class CoursesPage extends React.Component {
     }
 
     OnClickSave(event) {
-        this.props.dispatch(courseActions.createCourse(this.state.course))
+        this.props.createCourse(this.state.course)
     }
 
     CourseRow(course, index) {
@@ -48,9 +48,7 @@ class CoursesPage extends React.Component {
 }
 
 CoursesPage.propTypes = {
-    // Because the second parameter mapDispatchToPros was ommited in `connect()`,
-    // dispatch will be automatically injected in this component props
-    dispatch: PropTypes.func.isRequired,
+    createCourse: PropTypes.func.isRequired,
     courses: PropTypes.array.isRequired,
 };
 
@@ -60,4 +58,10 @@ const mapStateToProps = (state, ownProps) => {
     };
 };
 
-export default connect(mapStateToProps)(CoursesPage);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createCourse: course => dispatch(courseActions.createCourse(course)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
