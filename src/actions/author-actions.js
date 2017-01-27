@@ -1,11 +1,11 @@
 import AuthorApi from '../api/mock-author-api';
 import * as types from './action-types';
 
-export function loadAuthorsSuccess(authors) {
+const loadAuthorsSuccess = (authors) => {
     return {type: types.LOAD_AUTHORS_SUCCESS, authors};
 }
 
-export function loadAuthors() {
+const loadAuthors = () => {
     return (dispatch) => {
         return AuthorApi.getAllAuthors()
             .then(authors => {
@@ -15,4 +15,6 @@ export function loadAuthors() {
                 throw(error);
             });
     };
-}
+};
+
+export {loadAuthors};
