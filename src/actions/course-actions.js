@@ -8,7 +8,7 @@ const loadCoursesSuccess = (courses) => {
 const loadCourses = () => {
     return (dispatch) => {
         return CourseApi.getAllCourses()
-            .then( courses => {
+            .then(courses => {
                 dispatch(loadCoursesSuccess(courses));
             })
             .catch(error => {
