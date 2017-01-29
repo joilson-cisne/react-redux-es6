@@ -5,6 +5,14 @@ const loadCoursesSuccess = (courses) => {
     return {type: types.LOAD_COURSES_SUCCESS, courses};
 };
 
+const createCourseSuccess = (course) => {
+    return {type: types.CREATE_COURSE_SUCCESS, course};
+};
+
+const updateCourseSuccess = (course) => {
+    return {type: types.UPDATE_COURSE_SUCCESS, course};
+};
+
 const loadCourses = () => {
     return (dispatch) => {
         return CourseApi.getAllCourses()
@@ -17,4 +25,18 @@ const loadCourses = () => {
     };
 }
 
-export {loadCourses};
+const saveCourse = (course) => {
+    return (dispatch, getState) => {
+        return CourseApi.saveCourse(course)
+            .then(savedCourse => {
+                course.id
+                    ? dispatch(updateCourseSuccess(savedCourse))
+                    : dispatch(createCourseSuccess(savedCourse));
+            })
+            .catch(error => {
+                throw(error);
+            });
+    };
+}
+
+export {loadCourses, saveCourse};
