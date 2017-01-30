@@ -2,15 +2,15 @@ import * as types from './action-types';
 import CourseApi from '../api/mock-course-api';
 import {beginAjaxCall, ajaxCallError} from './ajax-status-actions';
 
-const loadCoursesSuccess = (courses) => {
+export const loadCoursesSuccess = (courses) => {
     return {type: types.LOAD_COURSES_SUCCESS, courses};
 };
 
-const createCourseSuccess = (course) => {
+export const createCourseSuccess = (course) => {
     return {type: types.CREATE_COURSE_SUCCESS, course};
 };
 
-const updateCourseSuccess = (course) => {
+export const updateCourseSuccess = (course) => {
     return {type: types.UPDATE_COURSE_SUCCESS, course};
 };
 
